@@ -11,4 +11,4 @@ def receive_json():
     return jsonify(data), 200
 
 if __name__ == '__main__':
-    app.run(debug=True,host=os.getenv("PORT"))
+    app.run(debug=True)
