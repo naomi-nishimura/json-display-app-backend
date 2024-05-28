@@ -4,7 +4,6 @@ import os
 import json
 from datetime import datetime
 
-now = datetime.now()
 whole_data = []
 
 app = Flask(__name__)
@@ -13,6 +12,7 @@ CORS(app)
 @app.route('/json', methods=['POST'])
 def receive_json():
     data = request.json
+    now = datetime.now()
     whole_data.append({"createdOn":str(now),"data":data})
     return jsonify(data), 200
 
